@@ -1,15 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Les streamers présentent</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Streamers Présentent</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>STREAMERS <span>EN DIRECT</span></h1>
+<div class="container">
 
-<div id="cards"></div>
+    <div class="header">
+
+        <div>
+            <div class="subtitle">MUR PUBLIC • TWITCH</div>
+
+            <h1>
+                STREAMERS
+                <span>EN DIRECT</span>
+            </h1>
+
+            <p>
+                Découvrez qui est en live sur le serveur.
+                Cliquez sur un streamer pour rejoindre sa chaîne Twitch.
+            </p>
+        </div>
+
+        <div class="counter">
+            <span id="liveCount">0</span> /
+            <span id="totalCount">0</span>
+            LIVE
+        </div>
+
+    </div>
+
+    <div class="cards" id="cards"></div>
+
+</div>
 
 <script src="streamers.js"></script>
 <script src="script.js"></script>
