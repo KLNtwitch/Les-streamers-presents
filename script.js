@@ -1,17 +1,47 @@
 const cards = document.getElementById("cards");
 
-streamers.forEach(streamer=>{
+let liveCount = 0;
 
-cards.innerHTML += `
-<div class="card">
+streamers.forEach(streamer => {
 
-<h2>${streamer.name}</h2>
+    if(streamer.live){
+        liveCount++;
+    }
 
-<a href="${streamer.twitch}" target="_blank">
-Voir la chaîne
-</a>
+    cards.innerHTML += `
+    <div class="card">
 
-</div>
-`;
+        <div class="top">
+
+            <img class="avatar"
+            src="${streamer.avatar}">
+
+            <div>
+
+                <div class="name">
+                    ${streamer.name}
+                </div>
+
+                <div class="status ${streamer.live ? "live":"offline"}">
+                    ${streamer.live ? "LIVE":"OFFLINE"}
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="open">
+
+            <a href="${streamer.twitch}" target="_blank">
+                OUVRIR ↗
+            </a>
+
+        </div>
+
+    </div>
+    `;
 
 });
+
+document.getElementById("liveCount").innerText = liveCount;
+document.getElementById("totalCount").innerText = streamers.length;
